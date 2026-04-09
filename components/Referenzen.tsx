@@ -7,154 +7,144 @@ import { useRef } from "react";
 const projects = [
   {
     num: "01",
-    name: "GEMEINDEBRUCKE\nWOLFSBERG",
+    name: "GEMEINDEBRUCKE WOLFSBERG",
     desc: "45-Meter-Spannweite aus Brettschichtholz fur die Marktgemeinde Wolfsberg. Eine Infrastrukturmassnahme, die Tradition und moderne Ingenieurskunst verbindet.",
     data: [
-      ["JAHR", "2024"], ["ORT", "WOLFSBERG, KARNTEN"], ["TYP", "BRUCKENBAU"],
-      ["SPANNWEITE", "45 METER"], ["MATERIAL", "BSH GL28h"], ["AUFTRAG", "MARKTGEMEINDE"],
+      ["JAHR", "2024"], ["ORT", "WOLFSBERG"], ["TYP", "BRUCKENBAU"],
+      ["SPANNWEITE", "45 M"], ["MATERIAL", "BSH GL28h"], ["AUFTRAG", "GEMEINDE"],
     ],
     img: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
     caption: "FIG. 01 — BRUCKENKONSTRUKTION WOLFSBERG",
   },
   {
     num: "02",
-    name: "PRODUKTIONSHALLE\nSCHWEIGER",
+    name: "PRODUKTIONSHALLE SCHWEIGER",
     desc: "3.200 Quadratmeter konstruktiver Holzbau fur ein produzierendes Unternehmen. Spannweiten bis 24 Meter, stutzenfrei.",
     data: [
-      ["JAHR", "2023"], ["ORT", "ST. PAUL IM LAVANTTAL"], ["TYP", "INGENIEURHOLZBAU"],
-      ["FLACHE", "3.200 m2"], ["SPANNWEITE", "24 M"], ["AUFTRAG", "SCHWEIGER GMBH"],
+      ["JAHR", "2023"], ["ORT", "ST. PAUL"], ["TYP", "HALLENBAU"],
+      ["FLACHE", "3.200 m2"], ["SPANNWEITE", "24 M"], ["AUFTRAG", "SCHWEIGER"],
     ],
     img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
     caption: "FIG. 02 — HALLENKONSTRUKTION LAVANTTAL",
   },
   {
     num: "03",
-    name: "WOHNHAUS\nORTNER",
+    name: "WOHNHAUS ORTNER",
     desc: "Einfamilienhaus in Massivholzbauweise mit eigener Larchenholz-Fassade. Klimaneutrale Konstruktion mit regionalen Materialien.",
     data: [
-      ["JAHR", "2024"], ["ORT", "REICHENFELS"], ["TYP", "MASSIVHOLZBAU"],
-      ["WOHNFLACHE", "180 m2"], ["MATERIAL", "FICHTE & LARCHE"], ["AUFTRAG", "PRIVAT"],
+      ["JAHR", "2024"], ["ORT", "REICHENFELS"], ["TYP", "WOHNBAU"],
+      ["FLACHE", "180 m2"], ["MATERIAL", "FICHTE"], ["AUFTRAG", "PRIVAT"],
     ],
     img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80",
     caption: "FIG. 03 — WOHNHAUS REICHENFELS",
   },
   {
     num: "04",
-    name: "SCHULERWEITERUNG\nREICHENFELS",
+    name: "SCHULERWEITERUNG REICHENFELS",
     desc: "Anbau an die ortliche Volksschule in Holzbauweise. Offentliches Auftragsprojekt mit Fokus auf Raumklima und Nachhaltigkeit.",
     data: [
-      ["JAHR", "2023"], ["ORT", "REICHENFELS"], ["TYP", "OFFENTLICHER BAU"],
-      ["FLACHE", "420 m2"], ["BAUZEIT", "9 MONATE"], ["AUFTRAG", "GEMEINDE"],
+      ["JAHR", "2023"], ["ORT", "REICHENFELS"], ["TYP", "OFFENTLICH"],
+      ["FLACHE", "420 m2"], ["BAUZEIT", "9 MON."], ["AUFTRAG", "GEMEINDE"],
     ],
     img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80",
     caption: "FIG. 04 — SCHULANBAU REICHENFELS",
   },
   {
     num: "05",
-    name: "DACHSANIERUNG\nVILLA S.",
+    name: "DACHSANIERUNG VILLA S.",
     desc: "Komplette Erneuerung eines denkmalgeschutzten Dachstuhls. Traditionelle Zimmermannsarbeit mit historischen Techniken.",
     data: [
       ["JAHR", "2024"], ["ORT", "KLAGENFURT"], ["TYP", "ZIMMEREI"],
-      ["FLACHE", "380 m2"], ["BESONDERHEIT", "DENKMALSCHUTZ"], ["AUFTRAG", "PRIVAT"],
+      ["FLACHE", "380 m2"], ["BESONDERHEIT", "DENKMAL"], ["AUFTRAG", "PRIVAT"],
     ],
     img: "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=1200&q=80",
     caption: "FIG. 05 — DACHSTUHL KLAGENFURT",
   },
   {
     num: "06",
-    name: "HOLZFASSADE\nGEWERBEPARK",
+    name: "HOLZFASSADE GEWERBEPARK",
     desc: "1.800 Quadratmeter hinterluftete Larchenholz-Fassade fur einen Gewerbepark. Dauerhaft, regional, wartungsarm.",
     data: [
-      ["JAHR", "2023"], ["ORT", "WOLFSBERG"], ["TYP", "AUSSENFASSADE"],
-      ["FLACHE", "1.800 m2"], ["MATERIAL", "LARCHE"], ["AUFTRAG", "GEWERBEPARK SUD"],
+      ["JAHR", "2023"], ["ORT", "WOLFSBERG"], ["TYP", "FASSADE"],
+      ["FLACHE", "1.800 m2"], ["MATERIAL", "LARCHE"], ["AUFTRAG", "GEWERBEPARK"],
     ],
     img: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200&q=80",
     caption: "FIG. 06 — FASSADE WOLFSBERG",
   },
 ];
 
-function ProjectBlock({
-  p,
-  i,
-}: {
-  p: (typeof projects)[0];
-  i: number;
-}) {
+function ProjectBlock({ p, i }: { p: (typeof projects)[0]; i: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-30%" });
+  const isInView = useInView(ref, { once: true, margin: "-20%" });
   const even = i % 2 === 1;
 
-  const textSide = (
-    <div className="lg:col-span-5 flex flex-col justify-center py-8 lg:py-0">
-      <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mb-6">
-        PROJEKT {p.num} / 06
-      </p>
-      <div className="w-[80px] h-px bg-holz mb-6" />
-      <h3 className="font-archivo-black text-[44px] md:text-[56px] xl:text-[72px] text-bone uppercase leading-[0.9] -tracking-[0.01em] whitespace-pre-line mb-8">
-        {p.name}
-      </h3>
-      <p className="text-stone text-[14px] leading-[1.6] max-w-[400px] mb-10">
-        {p.desc}
-      </p>
-      <div className="grid grid-cols-2 gap-x-6 gap-y-2 max-w-[400px]">
-        {p.data.map(([label, value]) => (
-          <div key={label} className="flex items-baseline gap-2">
-            <span className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase whitespace-nowrap">
-              {label}
-            </span>
-            <span className="flex-1 border-b border-dotted border-chalk/20 min-w-[20px] mb-1" />
-            <span className="font-mono text-[11px] tracking-[0.08em] text-bone uppercase whitespace-nowrap">
-              {value}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
-  const imageSide = (
-    <div ref={ref} className="lg:col-span-7 relative">
-      <div
-        className="relative aspect-[4/3] overflow-hidden"
-        style={{
-          clipPath: isInView ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
-          transition: "clip-path 1s linear",
-        }}
-      >
-        <Image
-          src={p.img}
-          alt={p.name.replace("\n", " ")}
-          fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 58vw"
-        />
-      </div>
-      <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mt-3">
-        {p.caption}
-      </p>
-    </div>
-  );
-
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-10%" }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="grid lg:grid-cols-12 gap-8 lg:gap-12 mb-32 md:mb-40"
+      className="mb-28 md:mb-40"
     >
-      {even ? (
-        <>
-          {imageSide}
-          {textSide}
-        </>
-      ) : (
-        <>
-          {textSide}
-          {imageSide}
-        </>
-      )}
-    </motion.div>
+      {/* IMAGE — always full width, different aspect ratios for rhythm */}
+      <div ref={ref} className={`relative w-full ${even ? "lg:w-[85%] lg:ml-auto" : "lg:w-[85%]"}`}>
+        <div
+          className="relative aspect-[16/9] overflow-hidden"
+          style={{
+            clipPath: isInView ? "inset(0 0 0 0)" : even ? "inset(0 0 0 100%)" : "inset(0 100% 0 0)",
+            transition: "clip-path 1s linear",
+          }}
+        >
+          <Image
+            src={p.img}
+            alt={p.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 85vw"
+          />
+        </div>
+        <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mt-3">
+          {p.caption}
+        </p>
+      </div>
+
+      {/* TEXT — below image, offset to the opposite side */}
+      <div className={`mt-10 flex ${even ? "justify-start" : "justify-end"}`}>
+        <div className="max-w-[560px] w-full">
+          <div className="flex items-center gap-4 mb-5">
+            <span className="font-archivo-black text-[48px] md:text-[64px] text-holz/20 leading-none">
+              {p.num}
+            </span>
+            <div className="w-[60px] h-px bg-holz" />
+            <span className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase">
+              PROJEKT {p.num} / 06
+            </span>
+          </div>
+
+          <h3 className="font-archivo-black text-[32px] md:text-[44px] xl:text-[56px] text-bone uppercase leading-[0.95] -tracking-[0.01em] mb-5">
+            {p.name}
+          </h3>
+
+          <p className="text-stone text-[14px] leading-[1.6] mb-8">
+            {p.desc}
+          </p>
+
+          {/* Data grid — 3 columns for clean alignment */}
+          <div className="grid grid-cols-3 gap-x-6 gap-y-3 border-t border-bone/5 pt-6">
+            {p.data.map(([label, value]) => (
+              <div key={label}>
+                <p className="font-mono text-[9px] tracking-[0.1em] text-chalk/60 uppercase">
+                  {label}
+                </p>
+                <p className="font-mono text-[12px] tracking-[0.05em] text-bone/80 uppercase mt-0.5">
+                  {value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.article>
   );
 }
 

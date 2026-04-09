@@ -4,73 +4,63 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const links = [
-  { label: "Leistungen", href: "#leistungen" },
-  { label: "Referenzen", href: "#referenzen" },
-  { label: "Unternehmen", href: "#unternehmen" },
-  { label: "Karriere", href: "#karriere" },
-  { label: "Kontakt", href: "#kontakt" },
-];
+const links = ["LEISTUNGEN", "REFERENZEN", "UNTERNEHMEN", "KONTAKT"];
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const h = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", h);
+    return () => window.removeEventListener("scroll", h);
   }, []);
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-kalk/95 backdrop-blur-md border-b border-stein/5" : "bg-transparent"
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 h-[72px] flex items-center transition-all duration-300 ${
+          scrolled ? "bg-bone border-b border-holz" : "bg-bone/0"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-          <a href="#" className="flex flex-col leading-none">
-            <span className={`font-archivo text-xl tracking-[0.15em] uppercase font-bold ${scrolled ? "text-stein" : "text-kalk"}`}>
-              BAUMGARTNER
-            </span>
-            <span className={`font-mono text-[9px] tracking-[0.3em] uppercase ${scrolled ? "text-beton" : "text-kalk/50"}`}>
-              HOLZBAU KARNTEN
-            </span>
+        <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between">
+          <a href="#" className="font-archivo font-semibold text-[18px] tracking-[0.02em] text-ink">
+            BAUMGARTNER
           </a>
 
-          <div className="hidden lg:flex items-center gap-1">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className={`px-4 py-2 text-[11px] tracking-[0.15em] uppercase font-medium transition-colors ${
-                  scrolled ? "text-stein/60 hover:text-stein" : "text-kalk/60 hover:text-kalk"
-                }`}
-              >
-                {l.label}
-              </a>
-            ))}
+          <div className="hidden lg:flex items-center gap-0">
+            <nav className="font-mono text-[11px] tracking-[0.15em] text-ink">
+              {links.map((l, i) => (
+                <span key={l}>
+                  <a
+                    href={`#${l.toLowerCase()}`}
+                    className="hover:text-holz transition-colors duration-200"
+                  >
+                    {l}
+                  </a>
+                  {i < links.length - 1 && (
+                    <span className="text-holz mx-3">/</span>
+                  )}
+                </span>
+              ))}
+            </nav>
             <a
               href="#kontakt"
-              className="ml-4 bg-holz text-white px-6 py-2.5 text-[11px] tracking-[0.15em] uppercase font-medium hover:bg-holz/90 transition-colors"
+              className="ml-10 font-archivo font-medium text-[13px] text-ink hover:text-holz transition-colors duration-200"
             >
-              Projekt anfragen
+              PROJEKT ANFRAGEN →
             </a>
           </div>
 
           <button
             onClick={() => setOpen(!open)}
-            className={`lg:hidden ${scrolled ? "text-stein" : "text-kalk"}`}
-            aria-label={open ? "Menu schliessen" : "Menu oeffnen"}
+            className="lg:hidden text-ink"
+            aria-label="Menu"
           >
-            {open ? <X size={22} /> : <Menu size={22} />}
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {open && (
@@ -78,31 +68,22 @@ export default function Navigation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-stein flex flex-col items-start justify-center px-10 gap-1 lg:hidden"
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-ink flex flex-col justify-center px-10 lg:hidden"
           >
             {links.map((l, i) => (
               <motion.a
-                key={l.href}
-                href={l.href}
+                key={l}
+                href={`#${l.toLowerCase()}`}
                 onClick={() => setOpen(false)}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.06 }}
-                className="font-archivo text-3xl md:text-4xl text-kalk uppercase tracking-wider hover:text-holz transition-colors py-2"
+                transition={{ delay: i * 0.06, duration: 0.3 }}
+                className="font-archivo-black text-4xl text-bone uppercase tracking-tight py-3 hover:text-holz transition-colors"
               >
-                {l.label}
+                {l}
               </motion.a>
             ))}
-            <motion.a
-              href="#kontakt"
-              onClick={() => setOpen(false)}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.35 }}
-              className="mt-6 bg-holz text-white px-8 py-3 font-archivo text-lg uppercase tracking-wider"
-            >
-              Projekt anfragen
-            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>

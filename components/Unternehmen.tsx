@@ -4,75 +4,76 @@ import { motion } from "framer-motion";
 
 export default function Unternehmen() {
   return (
-    <section id="unternehmen" className="py-24 md:py-32 bg-stein">
+    <section id="unternehmen" className="py-24 md:py-32 bg-forst">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-20">
-          {/* Left label + headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-2"
-          >
-            <p className="font-mono text-[11px] tracking-[0.3em] text-beton uppercase mb-4">
-              03 — UNTERNEHMEN
-            </p>
-            <h2 className="font-archivo text-4xl md:text-5xl lg:text-6xl text-kalk uppercase font-bold tracking-tight leading-[0.95]">
-              HANDWERK
-              <br />
-              MIT
-              <br />
-              HALTUNG.
-            </h2>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-15%" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-16"
+        >
+          <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mb-6">
+            05 / UNTERNEHMEN
+          </p>
+          <h2 className="font-archivo-black uppercase leading-[0.9] -tracking-[0.02em]">
+            <span className="block text-bone text-[64px] md:text-[88px] xl:text-[120px]">46 JAHRE</span>
+            <span className="block text-holz text-[64px] md:text-[88px] xl:text-[120px]">HANDWERK.</span>
+          </h2>
+        </motion.div>
 
-          {/* Right content */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+          {/* Left: empty space — deliberate */}
+          <div className="hidden lg:block lg:col-span-5" />
+
+          {/* Right: content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-3"
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="lg:col-span-7"
           >
-            <div className="space-y-6 text-kalk/60 leading-relaxed max-w-2xl">
+            <div className="space-y-6 text-bone/60 text-[16px] leading-[1.6] max-w-[560px]">
               <p>
-                Seit uber vier Jahrzehnten ist Baumgartner Holzbau aus Reichenfels
-                ein Begriff fur hochwertigen Holzbau in Karnten und daruber hinaus.
-                Was als klassische Zimmerei begann, ist heute ein moderner
-                Meisterbetrieb mit uber 40 Mitarbeitern.
+                Baumgartner Holzbau wurde 1978 als klassische Zimmerei im Lavanttal
+                gegrundet. Was mit Dachstuhlen fur private Bauherren begann,
+                entwickelte sich uber vier Jahrzehnte zu einem Vollservice-Holzbaubetrieb
+                mit uber 40 Mitarbeiterinnen und Mitarbeitern.
               </p>
               <p>
-                Wir verbinden traditionelles Handwerk mit ingenieurtechnischer
-                Prazision. Von der ersten Planungsskizze bis zur finalen Montage
-                begleiten unsere Ingenieure jedes Projekt — ob privates Wohnhaus,
-                Produktionshalle oder Bruckenbau.
+                Heute realisieren wir Projekte jeder Grossenordnung: vom Einfamilienhaus
+                bis zur Gemeindebrucke, vom Carport bis zur Produktionshalle. Was alle
+                Projekte verbindet, ist unser Anspruch an Qualitat, Prazision und
+                Langlebigkeit.
               </p>
               <p>
                 Als Anko-zertifizierter Betrieb arbeiten wir regelmaszig fur die
-                offentliche Hand und setzen auf regionale Wertschopfung, nachhaltige
-                Materialien und langfristige Partnerschaften mit Architekten und
-                Bautragern.
+                offentliche Hand. Wir setzen auf ingenieurtechnische Planung, regionale
+                Wertschopfung und faire Partnerschaften mit Architekten, Bautragern
+                und Gemeinden.
               </p>
             </div>
 
-            <div className="h-px bg-kalk/10 my-10" />
+            <div className="h-px bg-bone/10 my-12" />
 
             <div className="grid sm:grid-cols-2 gap-8">
               <div>
-                <p className="font-archivo text-kalk uppercase tracking-wide font-semibold text-sm">
-                  ING. PATRICK WASTIAN, BSC
-                </p>
-                <p className="font-mono text-[10px] tracking-[0.2em] text-beton uppercase mt-1">
+                <div className="w-[80px] h-px bg-holz mb-4" />
+                <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mb-2">
                   GESCHAFTSFUHRUNG
+                </p>
+                <p className="font-archivo font-semibold text-[20px] md:text-[24px] text-bone uppercase tracking-wide">
+                  ING. PATRICK WASTIAN, BSc
                 </p>
               </div>
               <div>
-                <p className="font-archivo text-kalk uppercase tracking-wide font-semibold text-sm">
-                  ING. MAG. ROBERT HITSCHMANN
-                </p>
-                <p className="font-mono text-[10px] tracking-[0.2em] text-beton uppercase mt-1">
+                <div className="w-[80px] h-px bg-holz mb-4" />
+                <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mb-2">
                   GESCHAFTSFUHRUNG
+                </p>
+                <p className="font-archivo font-semibold text-[20px] md:text-[24px] text-bone uppercase tracking-wide">
+                  ING. MAG. ROBERT HITSCHMANN
                 </p>
               </div>
             </div>

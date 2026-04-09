@@ -7,6 +7,13 @@ html {
 }
 
 body {
-  color: #3A3532;
+  color: #0E0E0C;
   background: #F4F1EA;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #B8733E;
+  color: #F4F1EA;
 }

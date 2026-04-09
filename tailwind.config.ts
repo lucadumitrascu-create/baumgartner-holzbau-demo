@@ -9,14 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        holz: "#8B5E3C",
-        stein: "#3A3532",
-        kalk: "#F4F1EA",
-        forst: "#2D3E2A",
-        rost: "#A64B2A",
-        beton: "#9A958D",
+        ink: "#0E0E0C",
+        bone: "#F4F1EA",
+        holz: "#B8733E",
+        forst: "#1A2818",
+        stone: "#4A4842",
+        chalk: "#8B8680",
       },
       fontFamily: {
+        "archivo-black": ["var(--font-archivo-black)"],
         archivo: ["var(--font-archivo)"],
         inter: ["var(--font-inter)"],
         mono: ["var(--font-mono)"],

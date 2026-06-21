@@ -37,20 +37,20 @@ export default function Unternehmen() {
             <div className="space-y-6 text-bone/60 text-[16px] leading-[1.6] max-w-[560px]">
               <p>
                 Baumgartner Holzbau wurde 1978 als klassische Zimmerei im Lavanttal
-                gegrundet. Was mit Dachstuhlen fur private Bauherren begann,
-                entwickelte sich uber vier Jahrzehnte zu einem Vollservice-Holzbaubetrieb
-                mit uber 40 Mitarbeiterinnen und Mitarbeitern.
+                gegründet. Was mit Dachstühlen für private Bauherren begann,
+                entwickelte sich über vier Jahrzehnte zu einem Vollservice-Holzbaubetrieb
+                mit über 40 Mitarbeiterinnen und Mitarbeitern.
               </p>
               <p>
-                Heute realisieren wir Projekte jeder Grossenordnung: vom Einfamilienhaus
-                bis zur Gemeindebrucke, vom Carport bis zur Produktionshalle. Was alle
-                Projekte verbindet, ist unser Anspruch an Qualitat, Prazision und
+                Heute realisieren wir Projekte jeder Größenordnung: vom Einfamilienhaus
+                bis zur Gemeindebrücke, vom Carport bis zur Produktionshalle. Was alle
+                Projekte verbindet, ist unser Anspruch an Qualität, Präzision und
                 Langlebigkeit.
               </p>
               <p>
-                Als Anko-zertifizierter Betrieb arbeiten wir regelmaszig fur die
-                offentliche Hand. Wir setzen auf ingenieurtechnische Planung, regionale
-                Wertschopfung und faire Partnerschaften mit Architekten, Bautragern
+                Als Ankö-zertifizierter Betrieb arbeiten wir regelmäßig für die
+                öffentliche Hand. Wir setzen auf ingenieurtechnische Planung, regionale
+                Wertschöpfung und faire Partnerschaften mit Architekten, Bauträgern
                 und Gemeinden.
               </p>
             </div>
@@ -61,7 +61,7 @@ export default function Unternehmen() {
               <div>
                 <div className="w-[80px] h-px bg-holz mb-4" />
                 <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mb-2">
-                  GESCHAFTSFUHRUNG
+                  GESCHÄFTSFÜHRUNG
                 </p>
                 <p className="font-archivo font-semibold text-[20px] md:text-[24px] text-bone uppercase tracking-wide">
                   ING. PATRICK WASTIAN, BSc
@@ -70,7 +70,7 @@ export default function Unternehmen() {
               <div>
                 <div className="w-[80px] h-px bg-holz mb-4" />
                 <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mb-2">
-                  GESCHAFTSFUHRUNG
+                  GESCHÄFTSFÜHRUNG
                 </p>
                 <p className="font-archivo font-semibold text-[20px] md:text-[24px] text-bone uppercase tracking-wide">
                   ING. MAG. ROBERT HITSCHMANN

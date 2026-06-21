@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 
 const services = [
-  { num: "01", name: "KLASSISCHE ZIMMEREI", desc: "Dachstuhle, Carports, Holzkonstruktionen. Traditionelles Handwerk mit modernen Werkzeugen." },
-  { num: "02", name: "PRIVATER WOHNBAU", desc: "Individuelle Holzhauser und Anbauten. Von der Planung bis zur Schlusselubergabe." },
-  { num: "03", name: "INGENIEURHOLZBAU", desc: "Hallen und Industriebauten. Konstruktiver Holzbau fur gewerbliche Projekte." },
-  { num: "04", name: "HOLZMASSIVBAU", desc: "Massivholzgebaude mit hoher Energieeffizienz und langer Lebensdauer." },
-  { num: "05", name: "BRUCKENBAU", desc: "Holzbrucken fur Gemeinden und offentliche Auftraggeber. Unsere Spezialitat." },
-  { num: "06", name: "AUSSENFASSADEN", desc: "Hochwertige Holzfassaden fur Neubauten und Sanierungsprojekte." },
-  { num: "07", name: "SONDERKONSTRUKTIONEN", desc: "Massgeschneiderte Holzstrukturen nach Ihren Anforderungen." },
+  { num: "01", name: "KLASSISCHE ZIMMEREI", desc: "Dachstühle, Carports, Holzkonstruktionen. Traditionelles Handwerk mit modernen Werkzeugen." },
+  { num: "02", name: "PRIVATER WOHNBAU", desc: "Individuelle Holzhäuser und Anbauten. Von der Planung bis zur Schlüsselübergabe." },
+  { num: "03", name: "INGENIEURHOLZBAU", desc: "Hallen und Industriebauten. Konstruktiver Holzbau für gewerbliche Projekte." },
+  { num: "04", name: "HOLZMASSIVBAU", desc: "Massivholzgebäude mit hoher Energieeffizienz und langer Lebensdauer." },
+  { num: "05", name: "BRÜCKENBAU", desc: "Holzbrücken für Gemeinden und öffentliche Auftraggeber. Unsere Spezialität." },
+  { num: "06", name: "AUSSENFASSADEN", desc: "Hochwertige Holzfassaden für Neubauten und Sanierungsprojekte." },
+  { num: "07", name: "SONDERKONSTRUKTIONEN", desc: "Maßgeschneiderte Holzstrukturen nach Ihren Anforderungen." },
 ];
 
 export default function Leistungen() {

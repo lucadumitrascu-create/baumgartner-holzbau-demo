@@ -44,8 +44,8 @@ export default function Hero() {
           >
             <div className="w-[80px] h-px bg-holz mb-5" />
             <p className="text-bone/70 text-[15px] leading-[1.6] max-w-[360px]">
-              Seit 1978 realisieren wir Bauprojekte aus Holz in Karnten. Zimmerei,
-              Ingenieurholzbau, Bruckenkonstruktion.
+              Seit 1978 realisieren wir Bauprojekte aus Holz in Kärnten. Zimmerei,
+              Ingenieurholzbau, Brückenkonstruktion.
             </p>
           </motion.div>
           <motion.div
@@ -97,9 +97,9 @@ export default function Hero() {
           >
             <div className="w-[120px] h-px bg-holz mb-6" />
             <p className="text-stone text-[16px] leading-[1.6] max-w-[480px]">
-              Seit 1978 realisieren wir Bauprojekte aus Holz in Karnten und daruber
-              hinaus. Von klassischer Zimmerei bis zu ingenieurmaszig geplanten
-              Bruckenkonstruktionen. Prazision, Tradition, Verantwortung.
+              Seit 1978 realisieren wir Bauprojekte aus Holz in Kärnten und darüber
+              hinaus. Von klassischer Zimmerei bis zu ingenieurmäßig geplanten
+              Brückenkonstruktionen. Präzision, Tradition, Verantwortung.
             </p>
           </motion.div>
 

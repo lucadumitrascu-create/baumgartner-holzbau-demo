@@ -7,22 +7,22 @@ import { useRef } from "react";
 const projects = [
   {
     num: "01",
-    name: "GEMEINDEBRUCKE WOLFSBERG",
-    desc: "45-Meter-Spannweite aus Brettschichtholz fur die Marktgemeinde Wolfsberg. Eine Infrastrukturmassnahme, die Tradition und moderne Ingenieurskunst verbindet.",
+    name: "GEMEINDEBRÜCKE WOLFSBERG",
+    desc: "45-Meter-Spannweite aus Brettschichtholz für die Marktgemeinde Wolfsberg. Eine Infrastrukturmaßnahme, die Tradition und moderne Ingenieurskunst verbindet.",
     data: [
-      ["JAHR", "2024"], ["ORT", "WOLFSBERG"], ["TYP", "BRUCKENBAU"],
+      ["JAHR", "2024"], ["ORT", "WOLFSBERG"], ["TYP", "BRÜCKENBAU"],
       ["SPANNWEITE", "45 M"], ["MATERIAL", "BSH GL28h"], ["AUFTRAG", "GEMEINDE"],
     ],
     img: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
-    caption: "FIG. 01 — BRUCKENKONSTRUKTION WOLFSBERG",
+    caption: "FIG. 01 — BRÜCKENKONSTRUKTION WOLFSBERG",
   },
   {
     num: "02",
     name: "PRODUKTIONSHALLE SCHWEIGER",
-    desc: "3.200 Quadratmeter konstruktiver Holzbau fur ein produzierendes Unternehmen. Spannweiten bis 24 Meter, stutzenfrei.",
+    desc: "3.200 Quadratmeter konstruktiver Holzbau für ein produzierendes Unternehmen. Spannweiten bis 24 Meter, stützenfrei.",
     data: [
       ["JAHR", "2023"], ["ORT", "ST. PAUL"], ["TYP", "HALLENBAU"],
-      ["FLACHE", "3.200 m2"], ["SPANNWEITE", "24 M"], ["AUFTRAG", "SCHWEIGER"],
+      ["FLÄCHE", "3.200 m2"], ["SPANNWEITE", "24 M"], ["AUFTRAG", "SCHWEIGER"],
     ],
     img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
     caption: "FIG. 02 — HALLENKONSTRUKTION LAVANTTAL",
@@ -30,10 +30,10 @@ const projects = [
   {
     num: "03",
     name: "WOHNHAUS ORTNER",
-    desc: "Einfamilienhaus in Massivholzbauweise mit eigener Larchenholz-Fassade. Klimaneutrale Konstruktion mit regionalen Materialien.",
+    desc: "Einfamilienhaus in Massivholzbauweise mit eigener Lärchenholz-Fassade. Klimaneutrale Konstruktion mit regionalen Materialien.",
     data: [
       ["JAHR", "2024"], ["ORT", "REICHENFELS"], ["TYP", "WOHNBAU"],
-      ["FLACHE", "180 m2"], ["MATERIAL", "FICHTE"], ["AUFTRAG", "PRIVAT"],
+      ["FLÄCHE", "180 m2"], ["MATERIAL", "FICHTE"], ["AUFTRAG", "PRIVAT"],
     ],
     img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80",
     caption: "FIG. 03 — WOHNHAUS REICHENFELS",
@@ -41,10 +41,10 @@ const projects = [
   {
     num: "04",
     name: "SCHULERWEITERUNG REICHENFELS",
-    desc: "Anbau an die ortliche Volksschule in Holzbauweise. Offentliches Auftragsprojekt mit Fokus auf Raumklima und Nachhaltigkeit.",
+    desc: "Anbau an die örtliche Volksschule in Holzbauweise. Öffentliches Auftragsprojekt mit Fokus auf Raumklima und Nachhaltigkeit.",
     data: [
-      ["JAHR", "2023"], ["ORT", "REICHENFELS"], ["TYP", "OFFENTLICH"],
-      ["FLACHE", "420 m2"], ["BAUZEIT", "9 MON."], ["AUFTRAG", "GEMEINDE"],
+      ["JAHR", "2023"], ["ORT", "REICHENFELS"], ["TYP", "ÖFFENTLICH"],
+      ["FLÄCHE", "420 m2"], ["BAUZEIT", "9 MON."], ["AUFTRAG", "GEMEINDE"],
     ],
     img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80",
     caption: "FIG. 04 — SCHULANBAU REICHENFELS",
@@ -52,10 +52,10 @@ const projects = [
   {
     num: "05",
     name: "DACHSANIERUNG VILLA S.",
-    desc: "Komplette Erneuerung eines denkmalgeschutzten Dachstuhls. Traditionelle Zimmermannsarbeit mit historischen Techniken.",
+    desc: "Komplette Erneuerung eines denkmalgeschützten Dachstuhls. Traditionelle Zimmermannsarbeit mit historischen Techniken.",
     data: [
       ["JAHR", "2024"], ["ORT", "KLAGENFURT"], ["TYP", "ZIMMEREI"],
-      ["FLACHE", "380 m2"], ["BESONDERHEIT", "DENKMAL"], ["AUFTRAG", "PRIVAT"],
+      ["FLÄCHE", "380 m2"], ["BESONDERHEIT", "DENKMAL"], ["AUFTRAG", "PRIVAT"],
     ],
     img: "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=1200&q=80",
     caption: "FIG. 05 — DACHSTUHL KLAGENFURT",
@@ -63,10 +63,10 @@ const projects = [
   {
     num: "06",
     name: "HOLZFASSADE GEWERBEPARK",
-    desc: "1.800 Quadratmeter hinterluftete Larchenholz-Fassade fur einen Gewerbepark. Dauerhaft, regional, wartungsarm.",
+    desc: "1.800 Quadratmeter hinterlüftete Lärchenholz-Fassade für einen Gewerbepark. Dauerhaft, regional, wartungsarm.",
     data: [
       ["JAHR", "2023"], ["ORT", "WOLFSBERG"], ["TYP", "FASSADE"],
-      ["FLACHE", "1.800 m2"], ["MATERIAL", "LARCHE"], ["AUFTRAG", "GEWERBEPARK"],
+      ["FLÄCHE", "1.800 m2"], ["MATERIAL", "LÄRCHE"], ["AUFTRAG", "GEWERBEPARK"],
     ],
     img: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200&q=80",
     caption: "FIG. 06 — FASSADE WOLFSBERG",
@@ -163,12 +163,12 @@ export default function Referenzen() {
             03 / REFERENZEN
           </p>
           <h2 className="font-archivo-black uppercase leading-[0.9] -tracking-[0.02em]">
-            <span className="block text-bone text-[64px] md:text-[88px] xl:text-[120px]">AUSGEWAHLTE</span>
+            <span className="block text-bone text-[64px] md:text-[88px] xl:text-[120px]">AUSGEWÄHLTE</span>
             <span className="block text-holz text-[64px] md:text-[88px] xl:text-[120px]">PROJEKTE.</span>
           </h2>
           <p className="text-stone text-[16px] leading-[1.6] max-w-[480px] mt-8">
             Ein Auszug unserer Arbeit aus den letzten Jahren. Jedes Projekt:
-            geplant, produziert und montiert in Karnten.
+            geplant, produziert und montiert in Kärnten.
           </p>
         </motion.div>
 

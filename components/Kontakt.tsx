@@ -34,7 +34,7 @@ export default function Kontakt() {
                 <p>RAIMUND BAUMGARTNER GMBH</p>
                 <p>INDUSTRIESTRASSE 3</p>
                 <p>9463 REICHENFELS</p>
-                <p className="text-stone">KARNTEN &middot; OSTERREICH</p>
+                <p className="text-stone">KÄRNTEN &middot; ÖSTERREICH</p>
               </div>
             </div>
 
@@ -66,7 +66,7 @@ export default function Kontakt() {
             {sent ? (
               <div className="py-20">
                 <p className="font-mono text-[11px] tracking-[0.08em] text-holz uppercase">
-                  ANFRAGE UBERMITTELT — WIR MELDEN UNS INNERHALB 48 STUNDEN.
+                  ANFRAGE ÜBERMITTELT — WIR MELDEN UNS INNERHALB 48 STUNDEN.
                 </p>
               </div>
             ) : (
@@ -121,11 +121,11 @@ export default function Kontakt() {
                     required
                     className="w-full bg-transparent border-b border-stone/20 text-ink py-3 text-[16px] focus:border-holz outline-none transition-colors appearance-none"
                   >
-                    <option value="">Bitte wahlen</option>
+                    <option value="">Bitte wählen</option>
                     <option value="privat">Privatbau</option>
                     <option value="ingenieur">Ingenieurholzbau</option>
-                    <option value="oeffentlich">Offentlicher Bau</option>
-                    <option value="bruecke">Bruckenbau</option>
+                    <option value="oeffentlich">Öffentlicher Bau</option>
+                    <option value="bruecke">Brückenbau</option>
                     <option value="sonstiges">Sonstiges</option>
                   </select>
                 </div>

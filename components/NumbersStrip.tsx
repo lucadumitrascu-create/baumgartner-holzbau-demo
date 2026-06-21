@@ -74,10 +74,10 @@ export default function NumbersStrip() {
               ZERTIFIZIERUNG
             </p>
             <p className="font-archivo font-semibold text-[32px] md:text-[48px] text-bone leading-[1]">
-              Anko
+              Ankö
             </p>
             <p className="font-mono text-[11px] tracking-[0.08em] text-bone/40 uppercase mt-2">
-              FUHRUNGSBESTATIGT
+              FÜHRUNGSBESTÄTIGT
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ const phases = [
   { num: "01", name: "PLANUNG", desc: "Bestandsaufnahme, Konzept, statische Berechnung, Genehmigungsplanung.", time: "ca. 4-8 WOCHEN" },
   { num: "02", name: "PRODUKTION", desc: "Vorfertigung aller Holzbauteile in unserer eigenen Werkshalle in Reichenfels.", time: "ca. 6-16 WOCHEN" },
   { num: "03", name: "MONTAGE", desc: "Transport, Aufrichten und Montage vor Ort. Koordination mit Nebengewerken.", time: "ca. 1-8 WOCHEN" },
-  { num: "04", name: "UBERGABE", desc: "Endabnahme, Dokumentation, Gewahrleistung, langfristige Partnerschaft.", time: "FORTLAUFEND" },
+  { num: "04", name: "ÜBERGABE", desc: "Endabnahme, Dokumentation, Gewährleistung, langfristige Partnerschaft.", time: "FORTLAUFEND" },
 ];
 
 export default function Methode() {

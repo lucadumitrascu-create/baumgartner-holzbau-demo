@@ -21,15 +21,15 @@ export default function Footer() {
               <li>Privater Wohnbau</li>
               <li>Ingenieurholzbau</li>
               <li>Holzmassivbau</li>
-              <li>Bruckenbau</li>
-              <li>Aussenfassaden</li>
+              <li>Brückenbau</li>
+              <li>Außenfassaden</li>
               <li>Sonderkonstruktionen</li>
             </ul>
           </div>
           <div>
             <p className="font-mono text-[10px] tracking-[0.08em] text-chalk uppercase mb-4">UNTERNEHMEN</p>
             <ul className="space-y-2">
-              {["Uber uns", "Team", "Karriere", "Referenzen", "Presse"].map((l) => (
+              {["Über uns", "Team", "Karriere", "Referenzen", "Presse"].map((l) => (
                 <li key={l}>
                   <a href="#" className="text-bone/30 hover:text-holz transition-colors text-[13px]">{l}</a>
                 </li>
@@ -39,7 +39,7 @@ export default function Footer() {
           <div>
             <p className="font-mono text-[10px] tracking-[0.08em] text-chalk uppercase mb-4">KONTAKT</p>
             <div className="text-bone/30 text-[13px] space-y-2">
-              <p>Industriestrasse 3</p>
+              <p>Industriestraße 3</p>
               <p>9463 Reichenfels</p>
               <p className="pt-2">
                 <a href="tel:+4343592660" className="hover:text-holz transition-colors">+43 4359 2660</a>

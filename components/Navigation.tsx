@@ -20,7 +20,7 @@ export default function Navigation() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 h-[72px] flex items-center transition-all duration-300 ${
-          scrolled ? "bg-bone border-b border-holz" : "bg-bone/85 backdrop-blur-md"
+          scrolled ? "bg-bone border-b border-ink/10" : "bg-bone/85 backdrop-blur-md"
         }`}
       >
         <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between">

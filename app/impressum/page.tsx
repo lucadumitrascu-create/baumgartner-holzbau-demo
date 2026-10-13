@@ -31,7 +31,7 @@ export default function Impressum() {
       </header>
       <main className="bg-bone py-20 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <h1 className="h-section text-ink mb-16">IMPRESSUM</h1>
+          <h1 className="h-section text-ink mb-16">Impressum</h1>
           <dl className="max-w-[760px] border-t border-stone/20">
             {rows.map(({ label, value }) => (
               <div key={label} className="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone/20">

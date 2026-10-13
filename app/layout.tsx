@@ -1,26 +1,13 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Archivo, Inter } from "next/font/google";
+import { Archivo } from "next/font/google";
 import Providers from "./providers";
 import "./globals.css";
 
-const archivoBlack = Archivo_Black({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-archivo-black",
-  display: "swap",
-});
-
+// One family for everything: the wdth axis gives the condensed display cut, normal width carries the text
 const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  axes: ["wdth"],
   variable: "--font-archivo",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-inter",
   display: "swap",
 });
 
@@ -42,11 +29,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="de"
-      className={`${archivoBlack.variable} ${archivo.variable} ${inter.variable}`}
-    >
-      <body className="font-inter antialiased">
+    <html lang="de" className={archivo.variable}>
+      <body className="font-archivo antialiased">
         <Providers>{children}</Providers>
       </body>
     </html>

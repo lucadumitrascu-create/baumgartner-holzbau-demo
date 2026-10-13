@@ -3,7 +3,7 @@ const pages = [
   ["Referenzen", "/#referenzen"],
   ["Ablauf", "/#methode"],
   ["Unternehmen", "/#unternehmen"],
-  ["Karriere", "/#karriere"],
+  ["Karriere", "mailto:info@holzbau-baumgartner.at?subject=Bewerbung"],
   ["Kontakt", "/#kontakt"],
 ];
 

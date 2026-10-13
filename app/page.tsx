@@ -5,7 +5,6 @@ import Leistungen from "@/components/Leistungen";
 import Referenzen from "@/components/Referenzen";
 import Methode from "@/components/Methode";
 import Unternehmen from "@/components/Unternehmen";
-import Karriere from "@/components/Karriere";
 import Kontakt from "@/components/Kontakt";
 import Footer from "@/components/Footer";
 
@@ -20,7 +19,6 @@ export default function Home() {
         <Referenzen />
         <Methode />
         <Unternehmen />
-        <Karriere />
         <Kontakt />
       </main>
       <Footer />

@@ -37,10 +37,19 @@ body {
 }
 
 @layer components {
+  /* Condensed cut of Archivo: tall and narrow, like the beams the company cuts */
+  .display {
+    @apply font-archivo leading-[0.88] -tracking-[0.005em];
+    font-weight: 800;
+    font-variation-settings: "wdth" 62.5;
+    /* condensed cuts set a narrow space; open it so words don't fuse */
+    word-spacing: 0.12em;
+  }
+
   /* One size scale for every section headline, fluid so long German words never clip */
   .h-section {
-    @apply font-archivo-black uppercase leading-[0.9] -tracking-[0.02em];
-    font-size: clamp(2.25rem, 9.5vw, 7.5rem);
+    @apply display;
+    font-size: clamp(3.25rem, 14vw, 10rem);
   }
 
   .label {

@@ -4,11 +4,11 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-// ­ = soft hyphen: long compounds break with a hyphen instead of clipping
+// \u00AD = soft hyphen: long compounds break with a hyphen instead of clipping
 const projects = [
   {
     num: "01",
-    name: "GEMEINDE­BRÜCKE WOLFSBERG",
+    name: "Gemeinde\u00ADbrücke Wolfsberg",
     desc: "45-Meter-Spannweite aus Brettschichtholz für die Marktgemeinde Wolfsberg.",
     data: [
       ["Jahr", "2024"], ["Ort", "Wolfsberg"], ["Typ", "Brückenbau"],
@@ -18,7 +18,7 @@ const projects = [
   },
   {
     num: "02",
-    name: "PRODUKTIONS­HALLE SCHWEIGER",
+    name: "Produktions\u00ADhalle Schweiger",
     desc: "3.200 Quadratmeter konstruktiver Holzbau für ein produzierendes Unternehmen. Spannweiten bis 24 Meter, stützenfrei.",
     data: [
       ["Jahr", "2023"], ["Ort", "St. Paul"], ["Typ", "Hallenbau"],
@@ -28,7 +28,7 @@ const projects = [
   },
   {
     num: "03",
-    name: "WOHNHAUS ORTNER",
+    name: "Wohnhaus Ortner",
     desc: "Einfamilienhaus in Massivholzbauweise mit eigener Lärchenholz-Fassade, gebaut mit regionalen Materialien.",
     data: [
       ["Jahr", "2024"], ["Ort", "Reichenfels"], ["Typ", "Wohnbau"],
@@ -38,7 +38,7 @@ const projects = [
   },
   {
     num: "04",
-    name: "SCHUL­ERWEITERUNG REICHENFELS",
+    name: "Schul\u00ADerweiterung Reichenfels",
     desc: "Anbau an die örtliche Volksschule in Holzbauweise. Öffentlicher Auftrag mit Fokus auf das Raumklima.",
     data: [
       ["Jahr", "2023"], ["Ort", "Reichenfels"], ["Typ", "Öffentlich"],
@@ -48,7 +48,7 @@ const projects = [
   },
   {
     num: "05",
-    name: "DACHSANIERUNG VILLA S.",
+    name: "Dachsanierung Villa S.",
     desc: "Komplette Erneuerung eines denkmalgeschützten Dachstuhls. Traditionelle Zimmermannsarbeit mit historischen Techniken.",
     data: [
       ["Jahr", "2024"], ["Ort", "Klagenfurt"], ["Typ", "Zimmerei"],
@@ -58,7 +58,7 @@ const projects = [
   },
   {
     num: "06",
-    name: "HOLZFASSADE GEWERBEPARK",
+    name: "Holzfassade Gewerbepark",
     desc: "1.800 Quadratmeter hinterlüftete Lärchenholz-Fassade für einen Gewerbepark.",
     data: [
       ["Jahr", "2023"], ["Ort", "Wolfsberg"], ["Typ", "Fassade"],
@@ -91,7 +91,7 @@ function ProjectBlock({ p, i }: { p: (typeof projects)[0]; i: number }) {
         >
           <Image
             src={p.img}
-            alt={p.name.replace(/­/g, "")}
+            alt={p.name.replace(/\u00AD/g, "")}
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 85vw"
@@ -102,7 +102,7 @@ function ProjectBlock({ p, i }: { p: (typeof projects)[0]; i: number }) {
       {/* TEXT: below image, offset to the opposite side */}
       <div className={`mt-10 flex ${even ? "justify-start" : "justify-end"}`}>
         <div className="max-w-[560px] w-full">
-          <h3 className="font-archivo-black text-[clamp(1.75rem,6vw,3.25rem)] text-bone uppercase leading-[0.95] -tracking-[0.01em] mb-5">
+          <h3 className="display text-bone text-[clamp(2.5rem,9vw,4.5rem)] mb-5">
             {p.name}
           </h3>
 
@@ -135,10 +135,7 @@ export default function Referenzen() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-24 md:mb-32"
         >
-          <h2 className="h-section">
-            <span className="block text-bone">AUSGEWÄHLTE</span>
-            <span className="block text-holz">PROJEKTE.</span>
-          </h2>
+          <h2 className="h-section text-bone">Ausgewählte Projekte</h2>
           <p className="text-bone/70 text-[17px] leading-[1.6] max-w-[480px] mt-8">
             Ein Auszug unserer Arbeit aus den letzten Jahren, jedes Projekt geplant,
             produziert und montiert in Kärnten.

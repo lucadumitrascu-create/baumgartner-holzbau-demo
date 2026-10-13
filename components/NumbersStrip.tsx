@@ -31,43 +31,34 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
   return <span ref={ref}>{val}{suffix}</span>;
 }
 
-const num = "font-archivo-black text-bone leading-[0.85] -tracking-[0.02em] tabular-nums text-[clamp(3.5rem,13vw,5rem)] lg:text-[clamp(3.5rem,6vw,6.5rem)]";
-const cell = "lg:border-l lg:border-holz/40 lg:pl-10 first:border-l-0 first:pl-0";
+const facts = [
+  { value: <Counter target={400} suffix="+" />, label: "realisierte Projekte" },
+  { value: <Counter target={7} />, label: "Leistungsbereiche" },
+  { value: "Ankö", label: "führungsbestätigt" },
+];
 
 export default function NumbersStrip() {
   return (
-    <section className="bg-ink">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 md:py-24">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 lg:gap-x-10">
-          <div className={cell}>
-            <p className="label text-chalk mb-4">Jahre im Handwerk</p>
-            <p className={num}>
-              <Counter target={YEARS} />
-            </p>
-          </div>
-
-          <div className={cell}>
-            <p className="label text-chalk mb-4">Realisierte Projekte</p>
-            <p className={num}>
-              <Counter target={400} suffix="+" />
-            </p>
-          </div>
-
-          <div className={cell}>
-            <p className="label text-chalk mb-4">Leistungsbereiche</p>
-            <p className={num}>
-              <Counter target={7} />
-            </p>
-          </div>
-
-          <div className={`${cell} flex flex-col justify-end`}>
-            <p className="label text-chalk mb-4">Zertifizierung</p>
-            <p className="font-archivo font-semibold text-[32px] md:text-[44px] text-bone leading-[1]">
-              Ankö
-            </p>
-            <p className="text-[14px] text-bone/60 mt-2">Führungsbestätigt</p>
-          </div>
+    <section className="bg-ink overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 md:py-24 grid lg:grid-cols-12 gap-14 lg:gap-10 items-end">
+        {/* The one oversized moment on the page: the years, with the line stepping onto the number */}
+        <div className="lg:col-span-7">
+          <p className="display text-holz tabular-nums leading-[0.8] text-[clamp(13rem,60vw,36rem)] -ml-[0.03em]">
+            <Counter target={YEARS} />
+          </p>
+          <p className="display relative text-bone text-[clamp(2.25rem,9vw,4.5rem)] -mt-[1em] max-w-[11ch]">
+            Jahre Holzbau aus Reichenfels
+          </p>
         </div>
+
+        <dl className="lg:col-span-5 lg:pb-3">
+          {facts.map((f) => (
+            <div key={f.label} className="flex items-baseline justify-between gap-6 border-t border-bone/15 py-5 last:border-b">
+              <dt className="text-bone/70 text-[17px]">{f.label}</dt>
+              <dd className="display text-bone tabular-nums text-[44px] md:text-[56px]">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

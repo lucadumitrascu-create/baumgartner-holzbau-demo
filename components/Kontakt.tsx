@@ -17,10 +17,7 @@ export default function Kontakt() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-20"
         >
-          <h2 className="h-section">
-            <span className="block text-ink">PROJEKT</span>
-            <span className="block text-holz">BESPRECHEN.</span>
-          </h2>
+          <h2 className="h-section text-ink">Projekt besprechen</h2>
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
@@ -30,7 +27,7 @@ export default function Kontakt() {
               <p className="label text-muted mb-3">Telefon</p>
               <a
                 href="tel:+4343592660"
-                className="font-archivo-black text-[36px] md:text-[48px] text-ink leading-[1] hover:text-holz-deep transition-colors duration-200"
+                className="display text-[48px] md:text-[64px] text-ink hover:text-holz-deep transition-colors duration-200"
               >
                 +43 4359 2660
               </a>

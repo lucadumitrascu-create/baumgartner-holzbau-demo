@@ -2,11 +2,9 @@
 
 import { motion } from "framer-motion";
 
-const YEARS = new Date().getFullYear() - 1978;
-
 export default function Unternehmen() {
   return (
-    <section id="unternehmen" className="py-24 md:py-32 bg-forst">
+    <section id="unternehmen" className="py-24 md:py-32 bg-ink">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -15,10 +13,7 @@ export default function Unternehmen() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-16"
         >
-          <h2 className="h-section">
-            <span className="block text-bone">{YEARS} JAHRE</span>
-            <span className="block text-holz">HANDWERK.</span>
-          </h2>
+          <h2 className="h-section text-bone">Handwerk seit 1978</h2>
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
@@ -31,7 +26,7 @@ export default function Unternehmen() {
             className="lg:col-span-5 grid grid-cols-2 lg:grid-cols-1 gap-x-6 gap-y-8 content-start border-t border-bone/15 pt-8"
           >
             <div className="col-span-2 lg:col-span-1">
-              <dt className="label text-bone/60 mb-3">Geschäftsführung</dt>
+              <dt className="label text-chalk mb-3">Geschäftsführung</dt>
               <dd className="font-archivo font-semibold text-[20px] md:text-[22px] text-bone leading-[1.35]">
                 Ing. Patrick Wastian, BSc
                 <br />
@@ -39,11 +34,11 @@ export default function Unternehmen() {
               </dd>
             </div>
             <div>
-              <dt className="label text-bone/60 mb-3">Gegründet</dt>
+              <dt className="label text-chalk mb-3">Gegründet</dt>
               <dd className="font-archivo font-semibold text-[20px] md:text-[22px] text-bone">1978, Lavanttal</dd>
             </div>
             <div>
-              <dt className="label text-bone/60 mb-3">Mitarbeiter</dt>
+              <dt className="label text-chalk mb-3">Mitarbeiter</dt>
               <dd className="font-archivo font-semibold text-[20px] md:text-[22px] text-bone">über 40</dd>
             </div>
           </motion.dl>

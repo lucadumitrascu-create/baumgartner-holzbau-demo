@@ -17,16 +17,18 @@ export default function Hero() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/55 to-ink/30" />
-        <div className="relative z-10 px-6 pb-12 pt-32">
+        <div className="relative z-10 px-6 pb-12 pt-40">
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="font-archivo-black uppercase tracking-tight leading-[0.85]"
+            className="display text-bone text-[clamp(5.5rem,30vw,8rem)]"
           >
-            <span className="block text-bone text-[72px] -tracking-[0.03em]">HOLZ</span>
-            <span className="block text-bone text-[56px] -tracking-[0.02em]">BAUT</span>
-            <span className="block text-holz text-[72px] -tracking-[0.03em]">DAUER.</span>
+            Holz
+            <br />
+            baut
+            <br />
+            Dauer
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -55,24 +57,25 @@ export default function Hero() {
 
       {/* DESKTOP: asymmetric split */}
       <div className="hidden lg:grid lg:grid-cols-12 min-h-[90vh]">
-        <div className="col-span-7 bg-bone flex flex-col justify-center px-10 xl:pl-20 pt-[120px] pb-[120px]">
-          <motion.div
+        <div className="col-span-7 bg-bone flex flex-col justify-center px-10 xl:pl-20 pt-[140px] pb-[100px]">
+          <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="display text-ink text-[clamp(8rem,12.5vw,15rem)]"
           >
-            <h1 className="font-archivo-black uppercase tracking-tight leading-[0.85]">
-              <span className="block text-ink text-[clamp(5rem,9.5vw,11.25rem)] -tracking-[0.03em]">HOLZ</span>
-              <span className="block text-ink text-[clamp(3.5rem,6.5vw,7.5rem)] -tracking-[0.02em] ml-20">BAUT</span>
-              <span className="block text-holz text-[clamp(5rem,9.5vw,11.25rem)] -tracking-[0.03em]">DAUER.</span>
-            </h1>
-          </motion.div>
+            Holz
+            <br />
+            baut
+            <br />
+            Dauer
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-            className="mt-12 text-stone text-[17px] leading-[1.6] max-w-[480px]"
+            className="mt-10 text-stone text-[18px] leading-[1.6] max-w-[480px]"
           >
             Seit 1978 realisieren wir Bauprojekte aus Holz in Kärnten und darüber
             hinaus. Von klassischer Zimmerei bis zu ingenieurmäßig geplanten
@@ -83,7 +86,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-            className="flex flex-wrap items-center gap-10 mt-12"
+            className="flex flex-wrap items-center gap-10 mt-10"
           >
             <a href="#kontakt" className="btn btn-ink">
               Projekt anfragen

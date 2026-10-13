@@ -4,7 +4,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const links = ["LEISTUNGEN", "REFERENZEN", "UNTERNEHMEN", "KONTAKT"];
+const links = [
+  ["Leistungen", "#leistungen"],
+  ["Referenzen", "#referenzen"],
+  ["Unternehmen", "#unternehmen"],
+  ["Kontakt", "#kontakt"],
+];
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -12,7 +17,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", h);
+    window.addEventListener("scroll", h, { passive: true });
     return () => window.removeEventListener("scroll", h);
   }, []);
 
@@ -24,40 +29,31 @@ export default function Navigation() {
         }`}
       >
         <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between">
-          <a href="#" className="font-archivo font-semibold text-[18px] tracking-[0.02em] text-ink">
+          <a href="/" className="font-archivo font-semibold text-[18px] tracking-[0.02em] text-ink">
             BAUMGARTNER
           </a>
 
-          <div className="hidden lg:flex items-center gap-0">
-            <nav className="font-mono text-[11px] tracking-[0.15em] text-ink">
-              {links.map((l, i) => (
-                <span key={l}>
-                  <a
-                    href={`#${l.toLowerCase()}`}
-                    className="hover:text-holz transition-colors duration-200"
-                  >
-                    {l}
-                  </a>
-                  {i < links.length - 1 && (
-                    <span className="text-holz mx-3">/</span>
-                  )}
-                </span>
+          <div className="hidden lg:flex items-center gap-10">
+            <nav aria-label="Hauptnavigation" className="flex items-center gap-8 font-archivo font-medium text-[15px] text-ink">
+              {links.map(([label, href]) => (
+                <a key={href} href={href} className="hover:text-holz-deep transition-colors duration-200">
+                  {label}
+                </a>
               ))}
             </nav>
-            <a
-              href="#kontakt"
-              className="ml-10 font-archivo font-medium text-[13px] text-ink hover:text-holz transition-colors duration-200"
-            >
-              PROJEKT ANFRAGEN →
+            <a href="#kontakt" className="btn btn-ink !py-3 !px-5 !text-[14px]">
+              Projekt anfragen
             </a>
           </div>
 
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden text-ink"
-            aria-label="Menu"
+            className="lg:hidden text-ink w-11 h-11 -mr-2.5 flex items-center justify-center"
+            aria-label={open ? "Menü schließen" : "Menü öffnen"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </header>
@@ -65,23 +61,24 @@ export default function Navigation() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-ink flex flex-col justify-center px-10 lg:hidden"
           >
-            {links.map((l, i) => (
+            {links.map(([label, href], i) => (
               <motion.a
-                key={l}
-                href={`#${l.toLowerCase()}`}
+                key={href}
+                href={href}
                 onClick={() => setOpen(false)}
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.06, duration: 0.3 }}
                 className="font-archivo-black text-4xl text-bone uppercase tracking-tight py-3 hover:text-holz transition-colors"
               >
-                {l}
+                {label}
               </motion.a>
             ))}
           </motion.div>

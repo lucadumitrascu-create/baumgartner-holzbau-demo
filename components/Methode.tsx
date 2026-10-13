@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const phases = [
-  { num: "01", name: "PLANUNG", desc: "Bestandsaufnahme, Konzept, statische Berechnung, Genehmigungsplanung.", time: "ca. 4-8 WOCHEN" },
-  { num: "02", name: "PRODUKTION", desc: "Vorfertigung aller Holzbauteile in unserer eigenen Werkshalle in Reichenfels.", time: "ca. 6-16 WOCHEN" },
-  { num: "03", name: "MONTAGE", desc: "Transport, Aufrichten und Montage vor Ort. Koordination mit Nebengewerken.", time: "ca. 1-8 WOCHEN" },
-  { num: "04", name: "ÜBERGABE", desc: "Endabnahme, Dokumentation, Gewährleistung, langfristige Partnerschaft.", time: "FORTLAUFEND" },
+  { num: "1", name: "PLANUNG", desc: "Bestandsaufnahme, Konzept, statische Berechnung, Genehmigungsplanung.", time: "ca. 4–8 Wochen" },
+  { num: "2", name: "PRODUKTION", desc: "Vorfertigung aller Holzbauteile in unserer eigenen Werkshalle in Reichenfels.", time: "ca. 6–16 Wochen" },
+  { num: "3", name: "MONTAGE", desc: "Transport, Aufrichten und Montage vor Ort. Koordination mit Nebengewerken.", time: "ca. 1–8 Wochen" },
+  { num: "4", name: "ÜBERGABE", desc: "Endabnahme, Dokumentation, Gewährleistung, langfristige Partnerschaft.", time: "fortlaufend" },
 ];
 
 export default function Methode() {
@@ -20,54 +20,35 @@ export default function Methode() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-20"
         >
-          <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mb-6">
-            04 / METHODE
-          </p>
-          <h2 className="font-archivo-black text-[64px] md:text-[88px] xl:text-[120px] text-ink uppercase leading-[0.9] -tracking-[0.02em]">
-            VIER PHASEN.
-          </h2>
-          <p className="text-stone text-[16px] leading-[1.6] max-w-[480px] mt-6">
-            Jedes Projekt folgt einem klaren Prozess. Planbar, transparent, dokumentiert.
+          <h2 className="h-section text-ink">VIER PHASEN.</h2>
+          <p className="text-stone text-[17px] leading-[1.6] max-w-[480px] mt-6">
+            Jedes Projekt läuft in denselben vier Schritten. Die Zeitangaben sind Richtwerte.
           </p>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="grid md:grid-cols-4 gap-0">
-          {/* Horizontal line connecting all phases */}
-          <div className="hidden md:block col-span-4 relative h-px bg-holz mb-10">
-            {phases.map((_, i) => (
-              <div
-                key={i}
-                className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-holz border-2 border-bone"
-                style={{ left: `${i * (100 / 3)}%` }}
-              />
-            ))}
-          </div>
-
+        {/* Each phase draws its own segment of the line, so dot and column always align */}
+        <ol className="grid md:grid-cols-2 xl:grid-cols-4 gap-x-10 gap-y-14">
           {phases.map((p, i) => (
-            <motion.div
+            <motion.li
               key={p.num}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-              className={`py-6 md:py-0 ${i < phases.length - 1 ? "md:pr-10 border-b md:border-b-0 md:border-r border-stone/10" : "md:pl-10"} ${i > 0 && i < phases.length - 1 ? "md:px-10" : ""} ${i === 0 ? "md:pr-10" : ""}`}
+              className="relative border-t border-holz pt-8"
             >
-              <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mb-4">
-                PHASE {p.num}
-              </p>
-              <h3 className="font-archivo-black text-[32px] md:text-[40px] xl:text-[48px] text-ink uppercase leading-[1] -tracking-[0.01em] mb-4">
+              <span className="absolute -top-[6px] left-0 w-3 h-3 rounded-full bg-holz" aria-hidden />
+              <p className="label text-muted mb-4">Phase {p.num}</p>
+              <h3 className="font-archivo-black text-[32px] md:text-[40px] xl:text-[34px] 2xl:text-[40px] text-ink uppercase leading-[1] -tracking-[0.01em] mb-4">
                 {p.name}
               </h3>
-              <p className="text-stone text-[14px] leading-[1.6] mb-4">
+              <p className="text-stone text-[16px] leading-[1.6] mb-4">
                 {p.desc}
               </p>
-              <p className="font-mono text-[11px] tracking-[0.08em] text-holz uppercase">
-                {p.time}
-              </p>
-            </motion.div>
+              <p className="label text-holz-deep">{p.time}</p>
+            </motion.li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

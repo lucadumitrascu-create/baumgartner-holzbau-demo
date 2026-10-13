@@ -12,15 +12,18 @@ const config: Config = {
         ink: "#0E0E0C",
         bone: "#F4F1EA",
         holz: "#B8733E",
+        // holz darkened for small text on bone (5.4:1); holz itself is 3.35:1 there
+        "holz-deep": "#8E5326",
         forst: "#1A2818",
         stone: "#4A4842",
+        // labels on light grounds (5:1 on bone); chalk is for dark grounds only
+        muted: "#6B675F",
         chalk: "#8B8680",
       },
       fontFamily: {
         "archivo-black": ["var(--font-archivo-black)"],
         archivo: ["var(--font-archivo)"],
         inter: ["var(--font-inter)"],
-        mono: ["var(--font-mono)"],
       },
     },
   },

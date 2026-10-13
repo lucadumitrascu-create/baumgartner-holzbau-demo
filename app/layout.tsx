@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Archivo, Inter, JetBrains_Mono } from "next/font/google";
+import { Archivo_Black, Archivo, Inter } from "next/font/google";
+import Providers from "./providers";
 import "./globals.css";
 
 const archivoBlack = Archivo_Black({
@@ -23,14 +24,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bg-demo.ealenterprises.com"),
   title: "Baumgartner Holzbau · Zimmerei, Ingenieurholzbau & Brückenbau aus Kärnten",
   description:
     "Seit 1978 realisieren wir Holzbauprojekte in Kärnten: Zimmerei, Ingenieurholzbau, Brücken und Massivholzbau. Raimund Baumgartner GmbH aus Reichenfels.",
@@ -49,9 +44,11 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${archivoBlack.variable} ${archivo.variable} ${inter.variable} ${mono.variable}`}
+      className={`${archivoBlack.variable} ${archivo.variable} ${inter.variable}`}
     >
-      <body className="font-inter antialiased">{children}</body>
+      <body className="font-inter antialiased">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

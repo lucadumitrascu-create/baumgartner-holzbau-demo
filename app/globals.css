@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 72px;
 }
 
 body {
@@ -16,4 +17,70 @@ body {
 ::selection {
   background: #B8733E;
   color: #F4F1EA;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid #B8733E;
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* One size scale for every section headline, fluid so long German words never clip */
+  .h-section {
+    @apply font-archivo-black uppercase leading-[0.9] -tracking-[0.02em];
+    font-size: clamp(2.25rem, 9.5vw, 7.5rem);
+  }
+
+  .label {
+    @apply font-archivo font-medium text-[13px] leading-none;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-3 px-6 py-4 font-archivo font-semibold text-[15px] leading-none transition-[background-color,color,transform] duration-200 active:scale-[0.98];
+  }
+
+  .btn-ink {
+    @apply bg-ink text-bone hover:bg-holz-deep;
+  }
+
+  .btn-bone {
+    @apply bg-bone text-ink hover:bg-holz;
+  }
+
+  .link-quiet {
+    @apply font-archivo font-semibold text-[15px] underline decoration-1 underline-offset-[6px] transition-colors duration-200;
+  }
+
+  .field {
+    @apply w-full bg-transparent border-b border-stone/70 text-ink py-3 text-[16px] outline-none transition-colors placeholder:text-stone/60 focus:border-holz-deep;
+  }
+
+  .field:user-invalid {
+    border-color: #A3361F;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

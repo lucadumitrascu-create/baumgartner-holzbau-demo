@@ -1,4 +1,3 @@
-import SideLabel from "@/components/SideLabel";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import NumbersStrip from "@/components/NumbersStrip";
@@ -13,9 +12,8 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <SideLabel />
+      <Navigation />
       <main>
-        <Navigation />
         <Hero />
         <NumbersStrip />
         <Leistungen />
@@ -24,8 +22,8 @@ export default function Home() {
         <Unternehmen />
         <Karriere />
         <Kontakt />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }

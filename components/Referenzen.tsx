@@ -4,72 +4,67 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
+// ­ = soft hyphen: long compounds break with a hyphen instead of clipping
 const projects = [
   {
     num: "01",
-    name: "GEMEINDEBRÜCKE WOLFSBERG",
-    desc: "45-Meter-Spannweite aus Brettschichtholz für die Marktgemeinde Wolfsberg. Eine Infrastrukturmaßnahme, die Tradition und moderne Ingenieurskunst verbindet.",
+    name: "GEMEINDE­BRÜCKE WOLFSBERG",
+    desc: "45-Meter-Spannweite aus Brettschichtholz für die Marktgemeinde Wolfsberg.",
     data: [
-      ["JAHR", "2024"], ["ORT", "WOLFSBERG"], ["TYP", "BRÜCKENBAU"],
-      ["SPANNWEITE", "45 M"], ["MATERIAL", "BSH GL28h"], ["AUFTRAG", "GEMEINDE"],
+      ["Jahr", "2024"], ["Ort", "Wolfsberg"], ["Typ", "Brückenbau"],
+      ["Spannweite", "45 m"], ["Material", "BSH GL28h"], ["Auftrag", "Gemeinde"],
     ],
     img: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=80",
-    caption: "FIG. 01 — BRÜCKENKONSTRUKTION WOLFSBERG",
   },
   {
     num: "02",
-    name: "PRODUKTIONSHALLE SCHWEIGER",
+    name: "PRODUKTIONS­HALLE SCHWEIGER",
     desc: "3.200 Quadratmeter konstruktiver Holzbau für ein produzierendes Unternehmen. Spannweiten bis 24 Meter, stützenfrei.",
     data: [
-      ["JAHR", "2023"], ["ORT", "ST. PAUL"], ["TYP", "HALLENBAU"],
-      ["FLÄCHE", "3.200 m2"], ["SPANNWEITE", "24 M"], ["AUFTRAG", "SCHWEIGER"],
+      ["Jahr", "2023"], ["Ort", "St. Paul"], ["Typ", "Hallenbau"],
+      ["Fläche", "3.200 m²"], ["Spannweite", "24 m"], ["Auftrag", "Schweiger"],
     ],
     img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
-    caption: "FIG. 02 — HALLENKONSTRUKTION LAVANTTAL",
   },
   {
     num: "03",
     name: "WOHNHAUS ORTNER",
-    desc: "Einfamilienhaus in Massivholzbauweise mit eigener Lärchenholz-Fassade. Klimaneutrale Konstruktion mit regionalen Materialien.",
+    desc: "Einfamilienhaus in Massivholzbauweise mit eigener Lärchenholz-Fassade, gebaut mit regionalen Materialien.",
     data: [
-      ["JAHR", "2024"], ["ORT", "REICHENFELS"], ["TYP", "WOHNBAU"],
-      ["FLÄCHE", "180 m2"], ["MATERIAL", "FICHTE"], ["AUFTRAG", "PRIVAT"],
+      ["Jahr", "2024"], ["Ort", "Reichenfels"], ["Typ", "Wohnbau"],
+      ["Fläche", "180 m²"], ["Material", "Fichte"], ["Auftrag", "Privat"],
     ],
     img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80",
-    caption: "FIG. 03 — WOHNHAUS REICHENFELS",
   },
   {
     num: "04",
-    name: "SCHULERWEITERUNG REICHENFELS",
-    desc: "Anbau an die örtliche Volksschule in Holzbauweise. Öffentliches Auftragsprojekt mit Fokus auf Raumklima und Nachhaltigkeit.",
+    name: "SCHUL­ERWEITERUNG REICHENFELS",
+    desc: "Anbau an die örtliche Volksschule in Holzbauweise. Öffentlicher Auftrag mit Fokus auf das Raumklima.",
     data: [
-      ["JAHR", "2023"], ["ORT", "REICHENFELS"], ["TYP", "ÖFFENTLICH"],
-      ["FLÄCHE", "420 m2"], ["BAUZEIT", "9 MON."], ["AUFTRAG", "GEMEINDE"],
+      ["Jahr", "2023"], ["Ort", "Reichenfels"], ["Typ", "Öffentlich"],
+      ["Fläche", "420 m²"], ["Bauzeit", "9 Monate"], ["Auftrag", "Gemeinde"],
     ],
     img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80",
-    caption: "FIG. 04 — SCHULANBAU REICHENFELS",
   },
   {
     num: "05",
     name: "DACHSANIERUNG VILLA S.",
     desc: "Komplette Erneuerung eines denkmalgeschützten Dachstuhls. Traditionelle Zimmermannsarbeit mit historischen Techniken.",
     data: [
-      ["JAHR", "2024"], ["ORT", "KLAGENFURT"], ["TYP", "ZIMMEREI"],
-      ["FLÄCHE", "380 m2"], ["BESONDERHEIT", "DENKMAL"], ["AUFTRAG", "PRIVAT"],
+      ["Jahr", "2024"], ["Ort", "Klagenfurt"], ["Typ", "Zimmerei"],
+      ["Fläche", "380 m²"], ["Besonderheit", "Denkmal"], ["Auftrag", "Privat"],
     ],
     img: "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=1200&q=80",
-    caption: "FIG. 05 — DACHSTUHL KLAGENFURT",
   },
   {
     num: "06",
     name: "HOLZFASSADE GEWERBEPARK",
-    desc: "1.800 Quadratmeter hinterlüftete Lärchenholz-Fassade für einen Gewerbepark. Dauerhaft, regional, wartungsarm.",
+    desc: "1.800 Quadratmeter hinterlüftete Lärchenholz-Fassade für einen Gewerbepark.",
     data: [
-      ["JAHR", "2023"], ["ORT", "WOLFSBERG"], ["TYP", "FASSADE"],
-      ["FLÄCHE", "1.800 m2"], ["MATERIAL", "LÄRCHE"], ["AUFTRAG", "GEWERBEPARK"],
+      ["Jahr", "2023"], ["Ort", "Wolfsberg"], ["Typ", "Fassade"],
+      ["Fläche", "1.800 m²"], ["Material", "Lärche"], ["Auftrag", "Gewerbepark"],
     ],
     img: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=1200&q=80",
-    caption: "FIG. 06 — FASSADE WOLFSBERG",
   },
 ];
 
@@ -86,62 +81,43 @@ function ProjectBlock({ p, i }: { p: (typeof projects)[0]; i: number }) {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="mb-28 md:mb-40"
     >
-      {/* IMAGE — always full width, different aspect ratios for rhythm */}
       <div ref={ref} className={`relative w-full ${even ? "lg:w-[85%] lg:ml-auto" : "lg:w-[85%]"}`}>
         <div
           className="relative aspect-[16/9] overflow-hidden"
           style={{
             clipPath: isInView ? "inset(0 0 0 0)" : even ? "inset(0 0 0 100%)" : "inset(0 100% 0 0)",
-            transition: "clip-path 1s linear",
+            transition: "clip-path 1.1s cubic-bezier(0.65, 0, 0.35, 1)",
           }}
         >
           <Image
             src={p.img}
-            alt={p.name}
+            alt={p.name.replace(/­/g, "")}
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 85vw"
           />
         </div>
-        <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mt-3">
-          {p.caption}
-        </p>
       </div>
 
-      {/* TEXT — below image, offset to the opposite side */}
+      {/* TEXT: below image, offset to the opposite side */}
       <div className={`mt-10 flex ${even ? "justify-start" : "justify-end"}`}>
         <div className="max-w-[560px] w-full">
-          <div className="flex items-center gap-4 mb-5">
-            <span className="font-archivo-black text-[48px] md:text-[64px] text-holz/20 leading-none">
-              {p.num}
-            </span>
-            <div className="w-[60px] h-px bg-holz" />
-            <span className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase">
-              PROJEKT {p.num} / 06
-            </span>
-          </div>
-
-          <h3 className="font-archivo-black text-[32px] md:text-[44px] xl:text-[56px] text-bone uppercase leading-[0.95] -tracking-[0.01em] mb-5">
+          <h3 className="font-archivo-black text-[clamp(1.75rem,6vw,3.25rem)] text-bone uppercase leading-[0.95] -tracking-[0.01em] mb-5">
             {p.name}
           </h3>
 
-          <p className="text-stone text-[14px] leading-[1.6] mb-8">
+          <p className="text-bone/70 text-[16px] leading-[1.6] mb-8">
             {p.desc}
           </p>
 
-          {/* Data grid — 3 columns for clean alignment */}
-          <div className="grid grid-cols-3 gap-x-6 gap-y-3 border-t border-bone/5 pt-6">
+          <dl className="grid grid-cols-3 gap-x-6 gap-y-4 border-t border-bone/15 pt-6">
             {p.data.map(([label, value]) => (
               <div key={label}>
-                <p className="font-mono text-[9px] tracking-[0.1em] text-chalk/60 uppercase">
-                  {label}
-                </p>
-                <p className="font-mono text-[12px] tracking-[0.05em] text-bone/80 uppercase mt-0.5">
-                  {value}
-                </p>
+                <dt className="label text-chalk">{label}</dt>
+                <dd className="text-[15px] text-bone mt-1.5">{value}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
     </motion.article>
@@ -159,16 +135,13 @@ export default function Referenzen() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-24 md:mb-32"
         >
-          <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase mb-6">
-            03 / REFERENZEN
-          </p>
-          <h2 className="font-archivo-black uppercase leading-[0.9] -tracking-[0.02em]">
-            <span className="block text-bone text-[64px] md:text-[88px] xl:text-[120px]">AUSGEWÄHLTE</span>
-            <span className="block text-holz text-[64px] md:text-[88px] xl:text-[120px]">PROJEKTE.</span>
+          <h2 className="h-section">
+            <span className="block text-bone">AUSGEWÄHLTE</span>
+            <span className="block text-holz">PROJEKTE.</span>
           </h2>
-          <p className="text-stone text-[16px] leading-[1.6] max-w-[480px] mt-8">
-            Ein Auszug unserer Arbeit aus den letzten Jahren. Jedes Projekt:
-            geplant, produziert und montiert in Kärnten.
+          <p className="text-bone/70 text-[17px] leading-[1.6] max-w-[480px] mt-8">
+            Ein Auszug unserer Arbeit aus den letzten Jahren, jedes Projekt geplant,
+            produziert und montiert in Kärnten.
           </p>
         </motion.div>
 
@@ -176,10 +149,12 @@ export default function Referenzen() {
           <ProjectBlock key={p.num} p={p} i={i} />
         ))}
 
-        <div className="w-full h-px bg-holz mb-6" />
-        <p className="font-mono text-[11px] tracking-[0.08em] text-chalk uppercase text-center">
-          — WEITERE PROJEKTE AUF ANFRAGE —
-        </p>
+        <div className="border-t border-bone/15 pt-10 flex flex-wrap items-center justify-between gap-6">
+          <p className="text-bone/70 text-[17px]">Weitere Projekte zeigen wir Ihnen gern persönlich.</p>
+          <a href="#kontakt" className="btn btn-bone">
+            Referenzliste anfragen
+          </a>
+        </div>
       </div>
     </section>
   );
